@@ -56,6 +56,16 @@ func init() {
 				return internal.ExploreLocations(args[0])
 			},
 		},
+		"catch": {
+			name:        "catch",
+			description: "catch a Pokemon",
+			callback: func(args []string) error {
+				if len(args) == 0 {
+					return fmt.Errorf("catch command requires a Pokemon")
+				}
+				return internal.CatchPokemon(args[0])
+			},
+		},
 	}
 }
 
