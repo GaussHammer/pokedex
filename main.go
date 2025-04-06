@@ -66,6 +66,23 @@ func init() {
 				return internal.CatchPokemon(args[0])
 			},
 		},
+		"inspect": {
+			name:        "inspect",
+			description: "inspect a caught Pokemon",
+			callback: func(args []string) error {
+				if len(args) == 0 {
+					return fmt.Errorf("inspect command requires a Pokemon")
+				}
+				return internal.InspectPokemon(args[0])
+			},
+		},
+		"pokedex": {
+			name:        "pokedex",
+			description: "lists all the Pokemon you have caught so far",
+			callback: func(args []string) error {
+				return internal.YourPokedex()
+			},
+		},
 	}
 }
 

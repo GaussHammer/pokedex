@@ -35,11 +35,11 @@ func CatchPokemon(args string) error {
 	}
 	catchChance := 100 - pokemon.Base_experience/4
 	random := rand.Intn(100)
-	if random > catchChance {
+	if random < catchChance {
 		Pokedex[args] = pokemon
-		fmt.Printf("%s was caught!", args)
+		fmt.Printf("%s was caught!\n", args)
 	} else {
-		fmt.Printf("%s escaped!", args)
+		fmt.Printf("%s escaped!\n", args)
 	}
 	return nil
 }

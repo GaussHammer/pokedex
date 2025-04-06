@@ -3,6 +3,7 @@ package internal
 type Pokemon struct {
 	Name            string  `json:"name"`
 	Base_experience int     `json:"base_experience"`
+	Height          int     `json:"height"`
 	Weight          int     `json:"weight"`
 	Stats           []Stats `json:"stats"`
 	Types           []Types `json:"types"`
